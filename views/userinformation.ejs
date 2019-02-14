@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>User Information Page</title>
+</head>
+<body>
+        <% include ./nav.ejs %>
+        <div class="form-parent">
+    <p>Welcome to User Information Page</p>
+
+    <form id="info" action="/students/userreport" method="POST">
+        <div><input name="name" required type="text" placeholder="Name"></div>
+        <div><input name="studentid"  required type="number" placeholder="Student ID"></div>
+        <div><input name="department" required type="text" placeholder="Department"></div>
+        <div><input id="clear" type="button" value="Clear"><input id="submit" type="submit" value="Add a User"></div>
+       
+        </form>
+    </div>
+        <script>
+        var clrbtn=document.getElementById('clear');
+        clrbtn.addEventListener('click',function(){
+            document.getElementById("info").reset();
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>User Report</title>
+</head>
+<body>
+        <% include ./nav.ejs %>
+    <div class="form-parent">
+        <p>User Report</p>
+    <table>
+            <tr><td>Name</td>
+            <td>Student ID</td>
+           <td>Department</td>
+        <td></td></tr>
+            <% for(var i=0; i < users.length; i++) { %>
+               <tr>
+                 <td><%= users[i].name %></td>
+                 <td><%= users[i].studentid %></td>
+                 <td><%= users[i].department %></td>
+                 <td><button class="delbtn"><a href="/students/delete/<%= users[i].studentid %>">Delete</a></button></td>
+               </tr>
+            <% } %>
+            </table>
+        </div>
+</body>
+</html>
